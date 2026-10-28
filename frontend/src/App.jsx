@@ -13,7 +13,7 @@ function App() {
 
   // Load career goals from the backend
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/api/goals")
+    fetch("/api/goals")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to load goals");
@@ -30,7 +30,7 @@ function App() {
 
   // Load skills from the backend
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/api/skills")
+    fetch("/api/skills")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to load skills");
@@ -47,7 +47,7 @@ function App() {
 
   // Load job applications from the backend
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/api/applications")
+    fetch("/api/applications")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to load applications");

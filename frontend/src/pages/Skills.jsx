@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API_URL = "http://127.0.0.1:5000/api/skills";
+const API_URL = "/api/skills";
 
 function Skills({ skills, setSkills }) {
   const [skillName, setSkillName] = useState("");

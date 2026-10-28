@@ -2,6 +2,7 @@ from pathlib import Path
 from flask_cors import CORS
 from dotenv import load_dotenv
 from flask import Flask, jsonify
+import os
 
 from routes.goals import goals_bp
 from routes.skills import skills_bp
@@ -26,4 +27,5 @@ def health_check():
 
 # Start development server
 if __name__ == "__main__":
-    app.run(debug=True)
+    debug_mode = os.getenv("FLASK_DEBUG", "false").lower() == "true"
+    app.run(debug=debug_mode)

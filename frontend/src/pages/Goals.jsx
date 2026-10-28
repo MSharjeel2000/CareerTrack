@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 
-const API_URL = "http://127.0.0.1:5000/api/goals";
+const API_URL = "/api/goals";
 
 function Goals({ goals, setGoals }) {
   const [goalTitle, setGoalTitle] = useState("");
