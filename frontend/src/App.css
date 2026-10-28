@@ -1,0 +1,660 @@
+/* CareerTrack component styles */
+.app-layout {
+  display:flex;
+}
+
+.page-area {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #111827;
+  color:white;
+  width:240px;
+  min-height:100vh;
+  padding:24px;
+}
+
+.sidebar h1 {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #374151;
+  margin-bottom: 0;
+}
+
+.sidebar ul {
+  list-style:none;
+  padding:0;
+  margin-top:32px;
+}
+
+.sidebar li {
+  list-style: none;
+  margin-bottom: 8px;
+}
+
+.sidebar li:hover {
+  background-color:#374151;
+  cursor:pointer;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 16px;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar a.active {
+  background-color: #312e81;
+  color: #ede9fe;
+  font-weight: bold;
+}
+
+.sidebar li:hover a:not(.active) {
+  background-color: #374151;
+  color: white;
+}
+
+.main-content {
+  flex:1;
+  padding:32px;
+  min-width: 0;
+  width: 100%;
+}
+
+.main-content h2 {
+  font-size:28px;
+  margin-top:0;
+  margin-bottom:8px;
+}
+
+.dashboard-cards {
+  display: flex;
+  gap:20px;
+}
+
+.dashboard-card {
+  background:white;
+  padding:24px;
+  border-radius:12px;
+  border: 1px solid #e5e7eb;
+  margin-top: 24px;
+  flex: 1;
+  display:flex;
+  flex-direction:column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card h3 {
+  margin-top:0;
+  margin-bottom:10px;
+  font-size:18px;
+}
+
+.dashboard-card p {
+  margin-bottom: 0;
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+.card-count {
+  font-size: 32px;
+  font-weight: bold;
+  color: #7c3aed;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.count-label {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+@media (max-width:600px) {
+  .app-layout {
+    flex-direction:column;
+  }
+  .sidebar {
+    width:100%;
+    min-height:auto;
+  }
+  .dashboard-cards {
+    flex-direction: column;
+  }
+  .main-content {
+    padding: 20px 16px;
+  }
+    .goal-form {
+    flex-direction: column;
+  }
+  .goal-form button {
+    width: 100%;
+  }
+
+  .goal-card {
+    padding: 16px;
+  }
+   .skill-form {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .skill-form-field {
+    width: 100%;
+    flex: none;
+  }
+
+  .skill-form-field input,
+  .skill-form-field select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .skill-form button {
+    width: 100%;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    padding: 16px;
+  }
+}
+
+.goals-page {
+  width: 100%;
+}
+
+.goal-form {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  margin-bottom: 28px;
+}
+
+.goal-input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.goal-form button {
+  padding: 12px 20px;
+  background-color: #6d28d9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.goal-form button:hover {
+  background-color: #5b21b6;
+}
+
+.goal-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.goal-details h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.goal-details p {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #6b7280;
+}
+
+.goal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.goal-actions button {
+  padding: 9px 14px;
+  border: none;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.goal-toggle-button {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.goal-toggle-button:hover {
+  background-color: #bfdbfe;
+}
+
+.goal-delete-button {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.goal-delete-button:hover {
+  background-color: #fecaca;
+}
+
+.goal-edit-button {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+
+.goal-edit-button:hover {
+  background-color: #ddd6fe;
+}
+
+.goal-status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.goal-status.completed {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.goal-status.in-progress {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+
+/* My Skills page */
+.skill-form {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  margin-top: 24px;
+  margin-bottom: 28px;
+}
+
+.skill-form-field {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.skill-form-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.skill-form-field input,
+.skill-form-field select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #ffffff;
+  font-size: 16px;
+}
+
+.skill-form-field input:focus,
+.skill-form-field select:focus {
+  outline: 2px solid #c4b5fd;
+  border-color: #7c3aed;
+}
+
+.skill-form button {
+  padding: 12px 20px;
+  background-color: #6d28d9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.skill-form button:hover {
+  background-color: #5b21b6;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.skill-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.skill-card h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  overflow-wrap: anywhere;
+}
+
+.skill-card p {
+  display: inline-block;
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #ede9fe;
+  color: #6d28d9;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.skill-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.skill-actions button {
+  padding: 9px 14px;
+  border: none;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.skill-edit-button {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+
+.skill-edit-button:hover {
+  background-color: #ddd6fe;
+}
+
+.skill-delete-button {
+  background-color: #dc2626;
+  color: white;
+}
+
+.skill-delete-button:hover {
+  background-color: #b91c1c;
+}
+
+
+/* Job Applications page */
+.application-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 24px 0 32px;
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.application-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.application-form-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.application-form-field input,
+.application-form-field select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #ffffff;
+  font-size: 16px;
+}
+
+.application-form-field input:focus,
+.application-form-field select:focus {
+  outline: 2px solid #c4b5fd;
+  border-color: #7c3aed;
+}
+
+.application-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  grid-column: 1 / -1;
+}
+
+.application-form-actions button,
+.application-actions button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.application-form-actions button:first-child {
+  background-color: #6d28d9;
+  color: white;
+}
+
+.application-form-actions button:first-child:hover {
+  background-color: #5b21b6;
+}
+
+.application-form-actions .application-cancel-button {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.application-form-actions .application-cancel-button:hover {
+  background-color: #d1d5db;
+}
+
+.applications-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.application-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  min-width: 0;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.application-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.application-details h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  overflow-wrap: anywhere;
+}
+
+.application-company,
+.application-date {
+  margin: 0 0 10px;
+  color: #6b7280;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.application-status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-applied {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-interview {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-offer {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-accepted {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+
+.status-rejected {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.status-withdrawn {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.application-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.application-edit-button {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+
+.application-edit-button:hover {
+  background-color: #ddd6fe;
+}
+
+.application-delete-button {
+  background-color: #dc2626;
+  color: white;
+}
+
+.application-delete-button:hover {
+  background-color: #b91c1c;
+}
+
+.applications-empty {
+  grid-column: 1 / -1;
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px dashed #d1d5db;
+  border-radius: 12px;
+  color: #6b7280;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .applications-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .application-form {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .application-form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .application-form-actions button {
+    width: 100%;
+  }
+
+  .application-card {
+    padding: 16px;
+  }
+}
+
+.site-footer {
+  padding: 24px 32px;
+  background: rgb(1, 2, 22);
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  color:lightgrey;
+}
+
+.footer-content h3 {
+  margin: 0 0 8px;
+  color: white;
+}
+
+.footer-content p {
+  margin: 6px 0;
+}
+
+.footer-copyright {
+  font-size: 13px;
+}
