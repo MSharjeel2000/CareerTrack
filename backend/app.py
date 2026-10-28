@@ -13,7 +13,9 @@ BACKEND_DIR = Path(__file__).resolve().parent
 load_dotenv(BACKEND_DIR / ".env")
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:5173"])
+CORS(app, origins=[
+    os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")
+])
 app.register_blueprint(goals_bp)
 app.register_blueprint(skills_bp)
 app.register_blueprint(applications_bp)

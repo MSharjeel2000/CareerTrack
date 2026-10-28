@@ -1,7 +1,8 @@
 
 import { useState } from "react";
 
-const API_URL = "/api/goals";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "";
+const API_URL = `${API_BASE_URL}/api/goals`;
 
 function Goals({ goals, setGoals }) {
   const [goalTitle, setGoalTitle] = useState("");

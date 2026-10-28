@@ -6,6 +6,10 @@ import Skills from "./pages/Skills";
 import Applications from "./pages/Applications";
 import "./App.css";
 
+// Use the deployed backend URL in production.
+// If it is empty locally, Docker's Nginx proxy still works.
+const API_BASE_URL = import.meta.env.VITE_API_URL || "";
+
 function App() {
   const [goals, setGoals] = useState([]);
   const [skills, setSkills] = useState([]);
@@ -13,7 +17,7 @@ function App() {
 
   // Load career goals from the backend
   useEffect(() => {
-    fetch("/api/goals")
+    fetch(`${API_BASE_URL}/api/goals`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to load goals");
@@ -30,7 +34,7 @@ function App() {
 
   // Load skills from the backend
   useEffect(() => {
-    fetch("/api/skills")
+    fetch(`${API_BASE_URL}/api/skills`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to load skills");
@@ -47,7 +51,7 @@ function App() {
 
   // Load job applications from the backend
   useEffect(() => {
-    fetch("/api/applications")
+    fetch(`${API_BASE_URL}/api/applications`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to load applications");
@@ -105,15 +109,11 @@ function App() {
             />
             <Route
               path="/goals"
-              element={
-                <Goals goals={goals} setGoals={setGoals} />
-              }
+              element={<Goals goals={goals} setGoals={setGoals} />}
             />
             <Route
               path="/skills"
-              element={
-                <Skills skills={skills} setSkills={setSkills} />
-              }
+              element={<Skills skills={skills} setSkills={setSkills} />}
             />
             <Route
               path="/applications"
